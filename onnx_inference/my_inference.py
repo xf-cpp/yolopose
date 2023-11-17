@@ -110,6 +110,7 @@ def model_inference_image_list(model_path, img_path=None, mean=None, scale=None,
         my_process(img_file, dst_file, output, score_threshold=0.3)
 
 def my_process(img_file, dst_file, output_n, score_threshold=0.3):
+    #输入为4张量的onnx处理函数
     output = [1,1,1,1]
     for i in range(4):
         output[i] =torch.from_numpy(output_n[i])
